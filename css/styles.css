@@ -10,7 +10,7 @@
     --subtle-text-color: #8e8f99;
     --accent-color: #E7E9FC;
     --modal-background-color: #FCFCFC;
-    --input-background-color: rgba(46, 47, 66, 0.4);
+    --input-border-color: rgba(46, 47, 66, 0.4);
     --primary-font: 'Roboto', sans-serif;
     --logo-font: 'Raleway', sans-serif;
     --transition-dur-and-func: 250ms cubic-bezier(0.4, 0, 0.2, 1);
@@ -612,8 +612,7 @@ footer {
     width: 264px;
 }
 
-.social-list-title,
-.subscribe-form-description {
+.social-list-title {
     margin-bottom: 16px;
     font-weight: 500;
     line-height: 1.5;
@@ -647,48 +646,56 @@ footer {
     fill: var(--primary-light-color);
 }
 
+.subscribe-form-description {
+    margin-bottom: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: var(--primary-white-color);
+    font-size: 16px;
+}
+
 .subscribe-form {
-    display: block;
+    display: flex;
+    gap: 24px;
 }
 
 .subscribe-form-input {
+    width: 264px;
     height: 40px;
-    background-color: var(--primary-dark-color);
+    background-color: transparent;
     color: var(--primary-white-color);
     border: 1px solid var(--primary-white-color);
     border-radius: 4px;
-    margin-right: 24px;
-    padding: 8px 16px;
-    box-shadow: 0px 4px 4px 0px #00000026;
-    transition: background-color var(--transition-dur-and-func);
+    padding-left: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.04em;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
 }
 
 .subscribe-form-input:focus {
     outline-color: transparent;
     outline-offset: 4px;
-    background-color: var(--primary-white-color);
-    color: var(--text-color);
 }
 
 .subscribe-form-input::placeholder {
     font-size: 12px;
-    font-weight: 400;
-    line-height: 24px;
-    letter-spacing: 0.04em;
     color: var(--primary-white-color);
 }
 
 .subscribe-form-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     min-width: 165px;
+    height: 40px;
     font-size: 16px;
     font-weight: 500;
     line-height: 1.5;
-    letter-spacing: 0.64px;
+    letter-spacing: 0.04em;
     text-align: center;
     display: inline-flex;
     padding: 8px 24px;
-    justify-content: center;
-    align-items: center;
     gap: 16px;
     border: none;
     border-radius: 4px;
@@ -705,6 +712,7 @@ footer {
 
 .subscribe-form-button-icon {
     fill: var(--primary-white-color);
+    margin-left: 16px;
 }
 
 /* ================ BACKDROP ================ */
@@ -790,12 +798,20 @@ footer {
     margin-bottom: 16px;
 }
 
-.contacts-for-call-form-field {
-    display: block;
+.contacts-for-call-form-container {
     margin-bottom: 8px;
 }
 
-.contacts-for-call-form-field-message {
+.contacts-for-call-form-field {
+    display: block;
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    margin-bottom: 4px;
+    color: var(--subtle-text-color);
+}
+
+.contacts-for-call-form-user-label-and-message-wrapper {
     margin-bottom: 16px;
 }
 
@@ -819,9 +835,11 @@ footer {
     height: 40px;
     top: 84px;
     border-radius: 4px ;
-    border: 1px solid var(--input-background-color); 
+    border: 1px solid var(--input-border-color);
+    background-color: transparent;
     padding-left: 38px;
     font-size: 18px;
+    outline: transparent;
     transition: border-color var(--transition-dur-and-func);
 }
 
@@ -848,17 +866,20 @@ footer {
     width: 100%;
     height: 120px;
     resize: none;
-    border: 1px solid var(--input-background-color);
+    border: 1px solid var(--input-border-color);
+    color: var(input-border-color);
+    background-color: transparent;
     border-radius: 4px;
     padding: 8px 16px;
-    font-size: 18px;
-
+    font-size: 12px;
+    line-height: 1.17;
+    letter-spacing: 0.04em;
+    outline: transparent;
+    transition: border-color var(--transition-dur-and-func);
 }
 
 .contacts-for-call-form-message:focus {
     border-color: var(--primary-brand-color);
-    outline: transparent;
-    outline-offset: 4px;
 }
 
 .contacts-for-call-form-message::placeholder {
@@ -866,18 +887,42 @@ footer {
     font-weight: 400;
     line-height: 14px;
     letter-spacing: 0.04em;
-    color: var(--input-background-color);
+    color: var(input-border-color);
+}
+
+.contacts-for-call-form-checkbox-wrapper {
+    margin-bottom: 24px;
 }
 
 .contacts-for-call-form-checkbox-label {
-    display: flex;
-    align-items: center;
     font-size: 12px;
-    font-weight: 400;
-    line-height: 14px;
+    line-height: 1.17;
     letter-spacing: 0.04em;
     color: var(--subtle-text-color);
-    margin-bottom: 24px;
+}
+
+.privacy-policy-checkbox-wrapper {
+    display: inline-flex;
+    border: 1px solid var(--input-border-color);
+    border-radius: 2px;
+    align-items: center;
+    justify-content: center;
+    fill: transparent;
+    cursor: pointer;
+    margin-right: 8px;
+    width: 16px;
+    height: 16px;
+    transition: background-color var(--transition-dur-and-func);
+}
+
+.contacts-for-call-form-checkbox:checked + .contacts-for-call-form-checkbox-label > .privacy-policy-checkbox-wrapper {
+    fill: var(--primary-light-color);
+    background-color: var(--pressed-state-color);
+    border: none;
+}
+
+.contacts-for-call-form-checkbox-label:focus > .privacy-policy-checkbox-wrapper {
+    border-color: var(--primary-brand-color);
 }
 
 .privacy-policy-link {
@@ -885,31 +930,14 @@ footer {
     color: var(--primary-brand-color);
 }
 
-.contacts-for-call-form-checkbox {
-    position: absolute;
-    appearance: none;
-}
-
-.contacts-for-call-form-own-checkbox {
-    fill: transparent;
-    border-radius: 2px ;
-    border: 1px solid var(--input-background-color);
-    padding: 4px 3px;
-    cursor: pointer;
-    margin-right: 8px;
-}
-
-.contacts-for-call-form-checkbox:checked + .contacts-for-call-form-own-checkbox {
-    fill: var(--primary-light-color);
-    background-color: var(--pressed-state-color);
-    border-color: var(--pressed-state-color);
-}
-
-.contacts-for-call-form-checkbox:focus + .contacts-for-call-form-own-checkbox {
-    outline: 1px solid var(--primary-brand-color);
+.privacy-policy-link:hover {
+    color: var(--pressed-state-color);
 }
 
 .contacts-for-call-form-btn {
+    display: block;
+    min-width: 169px;
+    height: 56px;
     background-color: var(--primary-brand-color);
     font-family: var(--primary-font);
     font-weight: 500;
@@ -918,12 +946,11 @@ footer {
     letter-spacing: 0.04em;
     color: var(--primary-white-color);
     padding: 16px 32px;
-    display: block;
     margin-left: auto;
     margin-right: auto;
-    border: 0;
+    border: none;
     border-radius: 4px;
-    min-width: 169px;
+    cursor: pointer;
     transition: background-color var(--transition-dur-and-func);
 }
 
