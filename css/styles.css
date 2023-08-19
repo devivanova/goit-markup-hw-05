@@ -799,10 +799,6 @@ footer {
     margin-bottom: 16px;
 }
 
-.contacts-for-call-form-container {
-    margin-bottom: 8px;
-}
-
 .contacts-for-call-form-field {
     display: block;
     font-size: 12px;
@@ -810,6 +806,10 @@ footer {
     letter-spacing: 0.04em;
     margin-bottom: 4px;
     color: var(--subtle-text-color);
+}
+
+.contacts-for-call-form-user-label-and-input-wrapper {
+    margin-bottom: 8px;
 }
 
 .contacts-for-call-form-user-label-and-message-wrapper {
@@ -868,7 +868,7 @@ footer {
     height: 120px;
     resize: none;
     border: 1px solid var(--input-border-color);
-    color: var(input-border-color);
+    color: var(--input-border-color);
     background-color: transparent;
     border-radius: 4px;
     padding: 8px 16px;
@@ -896,6 +896,7 @@ footer {
 }
 
 .contacts-for-call-form-checkbox-label {
+    display: block;
     font-size: 12px;
     line-height: 1.17;
     letter-spacing: 0.04em;
@@ -913,7 +914,9 @@ footer {
     margin-right: 8px;
     width: 16px;
     height: 16px;
-    transition: background-color var(--transition-dur-and-func);
+    transition: background-color var(--transition-dur-and-func),
+        border var(--transition-dur-and-func),
+        fill var(--transition-dur-and-func);
 }
 
 .contacts-for-call-form-checkbox:checked + .contacts-for-call-form-checkbox-label > .privacy-policy-checkbox-wrapper {
