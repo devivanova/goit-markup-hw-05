@@ -367,18 +367,20 @@
                     </li>
                 </ul>
             </div>
-            <form class="subscribe-form">
+            <div class="subscribe-form-container">
                 <p class="subscribe-form-description">Subscribe</p>
-                <label>
-                    <input class="subscribe-form-input" type="email" name="email" placeholder="E-mail" required />
-                </label>
-                <button class="subscribe-form-button" type="submit">
-                    Subscribe
-                    <svg class="subscribe-form-button-icon" width="24" height="24">
-                        <use href="./images/icons.svg#icon-send"></use>
-                    </svg>
-                </button>
-            </form>
+                <form class="subscribe-form">
+                    <label>
+                        <input class="subscribe-form-input" type="email" name="email" placeholder="E-mail" required />
+                    </label>
+                    <button class="subscribe-form-button" type="submit">
+                        Subscribe
+                        <svg class="subscribe-form-button-icon" width="24" height="24">
+                            <use href="./images/icons.svg#icon-send"></use>
+                        </svg>
+                    </button>
+                </form>
+            </div>
         </div>
     </footer>
     <div class="backdrop is-hidden" data-modal>
@@ -388,10 +390,10 @@
                     <use href="./images/icons.svg#icon-close"></use>
                 </svg>
             </button>
+            <p class="contacts-for-call-form-description">
+                Leave your contacts and we will call you back
+            </p>
             <form class="contacts-for-call-form">
-                <p class="contacts-for-call-form-description">
-                    Leave your contacts and we will call you back
-                </p>
                 <label class="contacts-for-call-form-field">
                     <span class="contacts-for-call-form-field-desc">Name</span>
                     <span class="contacts-for-call-form-input-wrapper">
